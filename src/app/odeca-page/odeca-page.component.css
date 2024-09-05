@@ -87,3 +87,14 @@ img{
     opacity: .9;
     cursor: pointer;
 }
+
+.details .size{
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.details .size::before{
+    content: "Velicina: ";
+    color: darkgrey;
+}
