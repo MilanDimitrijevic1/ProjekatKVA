@@ -1,0 +1,40 @@
+<app-not-found [visible]="!odeca" notFoundMessage="Proizvod ne postoji." resetLinkText="Vratite se nazad."></app-not-found>
+
+<div *ngIf="odeca" class="container">
+    <img [src]="odeca.imageUrl" [alt]="odeca.name">
+
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{odeca.name}}
+            </span>
+            <span class="favorite {{odeca.favorite?'':'not'}}">
+                ❤
+            </span>
+        </div>
+
+        <div class="stars">
+            ⭐ {{odeca.stars}}
+        </div>
+
+        <div class="tags">
+            <app-tags [odecaPageTags]="odeca.tags" justifyContent="start"></app-tags>
+        </div>
+
+        <div class="type">
+            <span>
+                Ova stavka je <strong>{{odeca.type}}</strong>!
+            </span>
+        </div>
+
+        <div class="price">
+            <span>
+                {{odeca.price|currency}}
+            </span>
+        </div>
+
+        <button (click)="addToCart()">Dodajte u korpu</button>
+
+    </div>
+
+</div>

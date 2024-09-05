@@ -1,0 +1,38 @@
+
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!odeca || odeca.length <= 0"></app-not-found>
+
+<ul>
+    <li *ngFor="let odeca of odeca">
+        <a routerLink="/odeca/{{odeca.id}}">
+            <img src="{{odeca.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{odeca.name}}
+                </div>
+                <span class="favorite {{odeca.favorite?'':'not '}}">
+                    ❤
+                </span>
+                <div class="stars">
+                    ⭐ {{odeca.stars}}
+                </div>
+                <div class="product-item-footer">
+                    <div class="tags">
+                        <span *ngFor="let tags of odeca.tags">
+                            {{tags}}
+                        </span>
+                    </div>
+                    <div class="type">
+                        {{odeca.type}}
+                    </div>
+                </div>
+                <div class="price">
+                    <span>
+                        {{odeca.price|currency}}
+                    </span>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
